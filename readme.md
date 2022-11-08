@@ -458,3 +458,6 @@ const john = new Customer('John', 'Doe', '555-555-5555', 'Standard')
 
 console.log(john.greeting()) // output: Hello there John Doe
 console.log(Customer.getMembershipCost()) // output: 500 
+
+```
+
