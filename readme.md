@@ -425,3 +425,36 @@ console.log(mary.greeting())
 
 console.log(Person.addNumbers(1 + 2)) // output: 3
 ```
+
+##### Inheritence (known as sub classes in ES6)
+
+```js
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+  
+  greeting() {
+    return `Hello there ${this.firstName} ${this.lastName}`
+  }
+}
+
+class Customer extends Person {
+  constructor(firstName, lastName, phone, membership) {
+    super(firstName, lastName) // what does super do?
+
+    this.phone = phone 
+    this.membership = membership
+  }
+
+  // The below method will only be available in the class that has been extended from the parent.
+  static getMembershipCost() {
+    return 500
+  }
+}
+
+const john = new Customer('John', 'Doe', '555-555-5555', 'Standard')
+
+console.log(john.greeting()) // output: Hello there John Doe
+console.log(Customer.getMembershipCost()) // output: 500 
